@@ -1,5 +1,5 @@
 {% set name = "zope.proxy" %}
-{% set version = "4.3.3" %}
+{% set version = "4.3.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dac4279aa05055d3897ab5e5ee5a7b39db121f91df65a530f8b1ac7f9bd93119
+  sha256: 46b8441d3713ca58f94ffc215f5fe6aa11523ec53d2a732ac4fb42b6ac6319bc
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -33,7 +33,7 @@ about:
   license: ZPL 2.1
   license_family: OTHER
   license_file: LICENSE.txt
-  summary: 'special objects which serve as mostly-transparent wrappers around another object'
+  summary: special objects which serve as mostly-transparent wrappers around another object
   description: |
     Proxies are special objects which serve as mostly-transparent wrappers
     around another object, intervening in the apparent behavior of the wrapped
