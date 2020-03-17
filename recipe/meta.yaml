@@ -1,5 +1,5 @@
 {% set name = "zope.proxy" %}
-{% set version = "4.3.4" %}
+{% set version = "4.3.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 46b8441d3713ca58f94ffc215f5fe6aa11523ec53d2a732ac4fb42b6ac6319bc
+  sha256: a66a0d94e5b081d5d695e66d6667e91e74d79e273eee95c1747717ba9cb70792
 
 build:
   number: 0
