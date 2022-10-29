@@ -3,7 +3,7 @@ About zope.proxy
 
 Home: https://github.com/zopefoundation/zope.proxy
 
-Package license: ZPL 2.1
+Package license: ZPL-2.1
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/zope.proxy-feedstock/blob/main/LICENSE.txt)
 
