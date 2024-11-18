@@ -1,16 +1,16 @@
 {% set name = "zope.proxy" %}
-{% set version = "5.3" %}
+{% set version = "6.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ad24d28ebc6ade9fbebe0cc4bdc4ec50d1dee41a453e331afd2a1260be967608
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/zope_proxy-{{ version }}.tar.gz
+  sha256: 9b70bf787fcbd3ecb86ba886d71e5cd857da0d6dbe2fcf2b6c24774f24747e2e
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
