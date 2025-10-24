@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zope_proxy-{{ version }}.tar.gz
-  sha256: 9b70bf787fcbd3ecb86ba886d71e5cd857da0d6dbe2fcf2b6c24774f24747e2e
+  sha256: 19cddee4b376ae9791fd6ddb491e861e3a7317a97b49a946b2e3c3f78254564c
 
 build:
   number: 2
