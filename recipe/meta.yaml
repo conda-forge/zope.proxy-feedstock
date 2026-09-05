@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zope_proxy-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/zope_proxy-{{ version }}.tar.gz
   sha256: 32a24c39867ae1a4d63b24e64cccb38e9cbf9345b309d2d6e3deac96e1905b1c
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
