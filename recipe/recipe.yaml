@@ -33,6 +33,11 @@ tests:
       imports:
         - zope.proxy
       pip_check: true
+  - requirements:
+      run:
+        - pytest
+    script:
+      - pytest --pyargs zope.proxy.tests
 
 about:
   license: ZPL-2.1
