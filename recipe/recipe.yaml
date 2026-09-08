@@ -1,20 +1,19 @@
 schema_version: 1
 
 context:
-  name: zope.proxy
   version: "7.1"
 
 package:
-  name: ${{ name|lower }}
+  name: zope.proxy
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/zope_proxy-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/z/zope.proxy/zope_proxy-${{ version }}.tar.gz
   sha256: 32a24c39867ae1a4d63b24e64cccb38e9cbf9345b309d2d6e3deac96e1905b1c
 
 build:
   number: 0
-  script: ${{ PYTHON }} -m pip install . -vv
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
@@ -23,8 +22,8 @@ requirements:
     - ${{ stdlib("c") }}
   host:
     - python
-    - pip
     - setuptools
+    - pip
   run:
     - python
     - zope.interface
@@ -33,7 +32,7 @@ tests:
   - python:
       imports:
         - zope.proxy
-      pip_check: false
+      pip_check: true
 
 about:
   license: ZPL-2.1
