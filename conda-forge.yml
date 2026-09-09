@@ -4,5 +4,11 @@ github:
   tooling_branch_name: main
 bot:
   automerge: true
+build_platform:
+  linux_ppc64le: linux_64
 conda_build:
   pkg_format: '2'
+conda_build_tool: rattler-build
+provider:
+  linux_aarch64: default
+  osx_arm64: default

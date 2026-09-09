@@ -1,39 +1,46 @@
-{% set name = "zope.proxy" %}
-{% set version = "7.1" %}
+schema_version: 1
+
+context:
+  version: "7.3"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: zope.proxy
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/zope_proxy-{{ version }}.tar.gz
-  sha256: 32a24c39867ae1a4d63b24e64cccb38e9cbf9345b309d2d6e3deac96e1905b1c
+  url: https://pypi.org/packages/source/z/zope.proxy/zope_proxy-${{ version }}.tar.gz
+  sha256: a2c00ff84d416b5008bbcdd7337eb800ade8bc083312e8b5e0ecd7d0c0d11cf6
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
     # This has a C extension
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
   host:
     - python
-    - pip
     - setuptools
+    - pip
   run:
     - python
     - zope.interface
 
-test:
-  imports:
-    - zope.proxy
+tests:
+  - python:
+      imports:
+        - zope.proxy
+      pip_check: true
+  - requirements:
+      run:
+        - pytest
+    script:
+      - pytest --pyargs zope.proxy.tests
 
 about:
-  home: https://github.com/zopefoundation/zope.proxy
   license: ZPL-2.1
-  license_family: OTHER
   license_file: LICENSE.txt
   summary: special objects which serve as mostly-transparent wrappers around another object
   description: |
@@ -45,10 +52,12 @@ about:
     like lie about its own __class__ that are difficult in pure Python (and
     were completely impossible before metaclasses). It also proxies all the
     internal slots (such as __int__/__str__/__add__).
-  doc_url: https://zopeproxy.readthedocs.io/en/latest/
-  dev_url: https://github.com/zopefoundation/zope.proxy
+  homepage: https://github.com/zopefoundation/zope.proxy
+  repository: https://github.com/zopefoundation/zope.proxy
+  documentation: https://zopeproxy.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
     - ChrisBarker-NOAA
     - daf
+    - mgorny
