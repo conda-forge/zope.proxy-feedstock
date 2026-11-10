@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "7.3"
+  version: "7.4"
 
 package:
   name: zope.proxy
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/z/zope.proxy/zope_proxy-${{ version }}.tar.gz
-  sha256: a2c00ff84d416b5008bbcdd7337eb800ade8bc083312e8b5e0ecd7d0c0d11cf6
+  sha256: b21a47889098a31a019f4489a5fdea6449b936a37014519899db0ad8863c4881
 
 build:
   number: 0
